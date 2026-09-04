@@ -1,0 +1,33 @@
+# .streamlit/config.toml
+# Configuración de Streamlit para CNBPEO — ONE RD
+# Ajustes de seguridad, comportamiento del servidor y TEMA (colores).
+
+[theme]
+# Tema azul institucional CNBPEO (mismos tonos que la portada).
+base = "dark"
+primaryColor = "#2f7ee0"              # azul de botones/acentos (Iniciar sesión, seleccionados)
+backgroundColor = "#0a1830"           # fondo principal (azul oscuro)
+secondaryBackgroundColor = "#0e2148"  # tarjetas, sidebar, inputs (azul un poco más claro)
+textColor = "#e8edf5"                 # texto claro
+
+[server]
+# Tamaño máximo de carga (MB). Los documentos ONE no superan 10 MB.
+maxUploadSize = 10
+
+# Permite CORS (requerido para que funcione enableXsrfProtection).
+# En producción detrás de proxy, cambiar a false y configurar trustedOrigins.
+enableCORS = true
+
+# Protección anti-XSRF incorporada de Streamlit (activa por defecto).
+enableXsrfProtection = true
+
+# En producción, desactivar el acceso externo directo si está detrás de proxy.
+# headless = true  # Descomentar en servidor de producción ONE
+
+[browser]
+# No recopilar estadísticas de uso de Streamlit.
+gatherUsageStats = false
+
+[logger]
+# Nivel de log del servidor Streamlit.
+level = "warning"
